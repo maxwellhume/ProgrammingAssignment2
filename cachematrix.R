@@ -1,8 +1,12 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Maxwell Hume
+## Submission for Coursera's R Programming (Roger Peng), Assignment 2
 
-## Write a short comment describing this function
+## Provides code for storing and computing the inverse of an invertible
+## matrix,  using caching where possible.
 
+## Creates an object that stores an invertible matrix,
+## as well as its inverse as a special property.
+## The matrix must be square and also invertible.
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
     set <- function(y) {
@@ -23,8 +27,11 @@ makeCacheMatrix <- function(x = matrix()) {
          getinverse = getinverse)
 }
 
-## Write a short comment describing this function
-
+# Performs the solve function to provide the inverse
+# of an invertible matrix. Also uses caching to provide
+# the answer if it has already been computed.
+# The input x must be a cached matrix object
+# as produced by the makeCacheMatrix function above.
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
     inv <- x$getinverse()
